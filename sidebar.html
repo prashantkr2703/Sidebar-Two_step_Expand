@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sidebar - Two-step Expand</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+<div class="sidebar">
+
+  <!-- LEFT MAIN ICONS -->
+  <div class="sidebar-icons">
+    <div>
+      <div class="icon-btn main-icon" data-section="Dashboard"><i class="fa-solid fa-gauge"></i></div>
+      <div class="icon-btn main-icon" data-section="Tasks"><i class="fa-solid fa-list-check"></i></div>
+      <div class="icon-btn main-icon" data-section="Mail"><i class="fa-solid fa-envelope"></i></div>
+    </div>
+    <div>
+      <div class="icon-btn" id="theme-toggle" title="Toggle Dark/Light"><i class="fa-solid fa-circle-half-stroke"></i></div>
+      <div class="icon-btn"><i class="fa-solid fa-gear"></i></div>
+      <div class="icon-btn"><i class="fa-solid fa-user"></i></div>
+    </div>
+  </div>
+
+  <!--ICON-ONLY DETAIL PANEL -->
+  <div class="sidebar-content-icon-only">
+    <div class="expand-btn" id="expand-btn"><i class="fa-solid fa-arrow-right"></i></div>
+    <div class="detail-icons">
+      <div class="icon-btn"><i class="fa-solid fa-magnifying-glass"></i></div>
+      <div class="icon-btn"><i class="fa-solid fa-plus"></i></div>
+      <div class="icon-btn"><i class="fa-solid fa-bolt"></i></div>
+    </div>
+  </div>
+
+  <!-- FULL CONTENT PANEL -->
+  <div class="sidebar-content">
+    <div class="sidebar-header">
+      <h2 id="panel-title">Title</h2>
+      <span id="collapse-btn" class="collapse-btn"><i class="fa-solid fa-arrow-left"></i></span>
+    </div>
+    <div class="common-search-bar">
+      <i class="fa-solid fa-magnifying-glass"></i>
+      <input type="text" placeholder="Search..." id="common-search-input" />
+    </div>
+    <div id="panel-content">
+      <!-- Dynamic content will be loaded here by JS -->
+    </div>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

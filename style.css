@@ -1,0 +1,471 @@
+:root {
+  html, body {
+    height: 100%;
+    overflow: hidden;
+  }
+  --sidebar-bg: #111;
+  --sidebar-bg-light: #f7f7f7;
+  --sidebar-text: #fff;
+  --sidebar-text-light: #222;
+  --hover-bg: rgba(255,255,255,0.1);
+  --hover-bg-light: rgba(0,0,0,0.08);
+}
+
+.common-search-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--hover-bg);
+  border-radius: 8px;
+  padding: 8px 12px;
+  margin-bottom: 18px;
+  margin-top: 2px;
+}
+
+.common-search-bar i {
+  color: var(--sidebar-text);
+  font-size: 1.1em;
+}
+
+.common-search-bar input {
+  border: none;
+  outline: none;
+  background: transparent;
+  color: var(--sidebar-text);
+  font-size: 1em;
+  width: 100%;
+}
+
+body.light .common-search-bar {
+  background: var(--hover-bg-light);
+}
+
+body.light .common-search-bar i {
+  color: var(--sidebar-text-light);
+}
+
+body.light .common-search-bar input {
+  color: var(--sidebar-text-light);
+}
+
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 0 18px 0;
+}
+
+.sidebar-header h2 {
+  margin: 0;
+  font-size: 1.5em;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.collapse-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3em;
+  margin-left: 10px;
+  cursor: pointer;
+  color: var(--sidebar-text);
+  background: none;
+  border: none;
+  outline: none;
+  height: 36px;
+  width: 36px;
+  border-radius: 50%;
+  transition: background 0.2s, color 0.2s;
+}
+
+.collapse-btn:hover {
+  background: var(--hover-bg);
+}
+
+body.light .collapse-btn {
+  color: var(--sidebar-text-light);
+}
+
+body.light .collapse-btn:hover {
+  background: var(--hover-bg-light);
+}
+
+.mail-list-flat {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-left: 0;
+}
+
+.mail-list-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 1.08em;
+  color: var(--sidebar-text);
+  padding: 8px 0 8px 0;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.mail-list-item:hover {
+  background: var(--hover-bg);
+}
+
+body.light .mail-list-item {
+  color: var(--sidebar-text-light);
+}
+
+body.light .mail-list-item:hover {
+  background: var(--hover-bg-light);
+}
+
+.mail-list-labels-header {
+  margin-top: 18px;
+  margin-bottom: 2px;
+  font-size: 0.98em;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: var(--sidebar-text);
+  opacity: 0.7;
+  text-transform: uppercase;
+}
+
+body.light .mail-list-labels-header {
+  color: var(--sidebar-text-light);
+}
+
+body.light .sidebar {
+  background: var(--sidebar-bg-light);
+}
+
+body.light .sidebar-content {
+  background: var(--sidebar-bg-light) !important;
+  color: var(--sidebar-text-light) !important;
+}
+
+body.light .expand-btn {
+  color: var(--sidebar-text-light);
+}
+
+body {
+  margin: 0;
+  background: var(--sidebar-bg);
+  font-family: Arial, sans-serif;
+  transition: background 0.3s;
+}
+
+body.light {
+  background: var(--sidebar-bg-light);
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+/* ---------- LEFT MAIN ICON BAR ---------- */
+.sidebar-icons {
+  width: 60px;
+  background: var(--sidebar-bg);
+  color: var(--sidebar-text);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: background 0.3s;
+}
+
+body.light .sidebar-icons {
+  background: var(--sidebar-bg-light);
+  color: var(--sidebar-text-light);
+}
+
+.icon-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+/* Highlight active main sidebar icon */
+.main-icon.active {
+  background: var(--hover-bg);
+  color: var(--sidebar-text);
+  border-radius: 8px;
+}
+
+body.light .main-icon.active {
+  background: var(--hover-bg-light);
+  color: var(--sidebar-text-light);
+}
+
+.icon-btn:hover {
+  background: var(--hover-bg);
+}
+
+body.light .icon-btn:hover {
+  background: var(--hover-bg-light);
+}
+
+/* ---------- ICON-ONLY DETAIL PANEL ---------- */
+.sidebar-content-icon-only {
+  width: 0;
+  overflow: hidden;
+  background: var(--sidebar-bg);
+  color: var(--sidebar-text);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  transition: width 0.3s ease;
+}
+
+body.light .sidebar-content-icon-only {
+  background: var(--sidebar-bg-light);
+  color: var(--sidebar-text-light);
+}
+
+.sidebar.show-icon-only .sidebar-content-icon-only {
+  width: 60px;
+}
+
+.detail-icons {
+  margin-top: 16px;
+  gap: 10px;
+}
+
+.expand-btn {
+  margin: 20px 0;
+  cursor: pointer;
+}
+
+/* ---------- FULL CONTENT PANEL ---------- */
+.sidebar-content {
+  width: 0;
+  min-width: 0;
+  background: var(--sidebar-bg);
+  color: var(--sidebar-text);
+  height: 100%;
+  opacity: 0;
+  pointer-events: none;
+  transition: width 0.35s cubic-bezier(0.4,0,0.2,1), opacity 0.3s;
+  padding: 0;
+  overflow: hidden;
+  z-index: 10;
+  box-shadow: 2px 0 16px 0 rgba(0,0,0,0.25);
+  border-radius: 18px;
+  box-shadow: 0 4px 32px 0 rgba(0,0,0,0.18);
+}
+
+body.light .sidebar-content {
+  background: var(--sidebar-bg-light);
+  color: var(--sidebar-text-light);
+.sidebar-content-icon-only {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  height: 100%;
+  transition: opacity 0.3s;
+}
+body.light .sidebar-content-icon-only {
+  background: #fff;
+}
+  padding: 20px;
+}
+
+.sidebar.show-icon-only .sidebar-content-icon-only {
+  display: flex;
+  opacity: 1;
+
+}
+.sidebar.expanded .sidebar-content-icon-only {
+  display: none;
+}
+
+.detail-icons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 30px;
+}
+
+/* Expand button inside icon-only panel */
+.expand-btn {
+  margin-top: 18px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  font-size: 1.2em;
+  color: #fff;
+  transition: color 0.2s;
+}
+
+.expand-btn:hover {
+  color: #aaa;
+}
+
+.sidebar-header h2 {
+  margin: 0;
+}
+
+.search-box input {
+  width: 100%;
+  padding: 8px;
+  margin: 10px 0;
+  border: none;
+  width: 60px;
+  background: var(--sidebar-bg);
+  color: var(--sidebar-text);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  transition: opacity 0.3s, width 0.3s;
+  opacity: 1;
+  z-index: 1;
+  width: 320px;
+  min-width: 320px;
+  background: #181818;
+  color: #fff;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 2;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s, left 0.3s;
+}
+
+.sidebar.expanded .sidebar-content {
+  width: 320px;
+  min-width: 320px;
+  opacity: 1;
+  pointer-events: auto;
+  padding: 20px;
+  background: var(--sidebar-bg);
+  color: var(--sidebar-text);
+  z-index: 10;
+  box-shadow: 2px 0 16px 0 rgba(0,0,0,0.25);
+}
+
+.menu-group h4 {
+  margin: 10px 0;
+  font-size: 0.9em;
+
+  .sidebar.expanded {
+    width: 320px;
+    min-width: 320px;
+  }
+  .sidebar.expanded .sidebar-content-icon-only {
+    display: none;
+  }
+  .sidebar.expanded .sidebar-icons {
+    opacity: 0.2;
+    pointer-events: none;
+  }
+  .mail-icon-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 28px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    min-width: 48px;
+  }
+  .mail-icon-list .mail-icon {
+    font-size: 1.3em;
+    color: var(--sidebar-text);
+    margin-bottom: 8px;
+  }
+  body.light .mail-icon-list .mail-icon {
+    color: #222;
+  }
+  .mail-folders-labels {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin-left: 80px;
+    margin-top: 10px;
+  }
+  .mail-folders-labels h4 {
+    margin-bottom: 8px;
+    font-size: 1em;
+    letter-spacing: 1px;
+    color: #aaa;
+    font-weight: 600;
+  }
+  .mail-folders-labels .mail-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .mail-folders-labels .mail-list .mail-item {
+    font-size: 1.08em;
+    color: var(--sidebar-text);
+    cursor: pointer;
+    transition: color 0.2s;
+  }
+  .mail-folders-labels .mail-list .mail-item:hover {
+    color: #1e90ff;
+  }
+  body.light .mail-folders-labels .mail-list .mail-item {
+    color: #222;
+  }
+  text-transform: uppercase;
+  opacity: 0.7;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+  font-size: 1.08em;
+}
+
+.menu-item:hover {
+  background: var(--hover-bg);
+  min-width: 22px;
+  text-align: center;
+}
+
+body.light .menu-item:hover {
+  background: var(--hover-bg-light);
+}
+
+.submenu {
+  margin-left: 34px;
+  display: none;
+  flex-direction: column;
+}
+
+.submenu.show {
+  display: flex;
+}
+
+.theme-toggle {
+  margin: 10px auto;
+  padding: 6px 12px;
+  cursor: pointer;
+  border: none;
+  border-radius: 6px;
+  background: #444;
+  color: #fff;
+}
+
+body.light .theme-toggle {
+  background: #ddd;
+  color: #111;
+}
